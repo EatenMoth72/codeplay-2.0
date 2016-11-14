@@ -6,6 +6,7 @@ Codeplay  - for Codemill AB
   Codemill has come up with a new product that will revolutionize the usage of video on
   webpages. They need someone to build this product and create a webpage to present it on.
 
+
 -Assignment-
   
   Create an html5 video player that is branded for Codemill by customizing the control buttons.
@@ -16,11 +17,13 @@ Codeplay  - for Codemill AB
   Depending if there is a lot of time left when this is done, the team will be starting on a
   miniature MAM (Media Asset Management).
 
+
 -Available assets
 
 ● Video clips for testing
 ● Graphical profile for Codemill
 ● Staff to user test on
+
 
 -Work-
 
