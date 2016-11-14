@@ -1,12 +1,30 @@
- <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
+	<head>
+		<title>Page Title</title>
 
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="script.js"></script>
+	</head>
 
-</body>
-</html> 
+	<body>
+		<h1>CodePlay test etst123123123</h1>
+
+		<div id= "video-player">
+			<video id= "video" width="320" height="240" controls>
+  				<source src="video_1.mp4" type="video/mp4">
+
+				Your browser does not support the video tag.
+			</video>
+			<div id="video-controls">
+				<button type="button" id="play-pause">Play</button>
+				<input type="range" id="seek-bar" value="0">
+    			<button type="button" id="mute">Mute</button>
+   				<input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+    			<button type="button" id="full-screen">Full-Screen</button>	
+			</div>
+		</div>
+	</body>
+
+</html>
