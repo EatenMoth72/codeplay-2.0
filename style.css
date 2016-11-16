@@ -12,6 +12,15 @@ h1 {}
 
 p {}
 
+#title {
+	width: 300px;
+	display: flex;
+	justify-content: space-around;
+	margin: auto;
+	margin-bottom: 30px;
+	margin-top: 20px;
+}
+
 #video-player {}
 
 #video {}
