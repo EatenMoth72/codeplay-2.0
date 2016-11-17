@@ -9,7 +9,6 @@ body {}
 	bottom: 0px;
 	display: flex;
 	justify-content: space-around;
-	margin: auto;
 	background-color: red;
 }
 
@@ -49,18 +48,37 @@ p {}
 
 #video-controls {
 	position: absolute;
-	bottom: 5px;
+	bottom: 7px;
+	height: 7%;
+	width: 100%;
 }
 
-#play-pause {}
+#play-pause {
+	float: left;
+	margin-right: 3%;
+	margin-left: 2%
+}
 
-#seek-bar {}
+#seek-bar {
+	width: 55%;
+	float: left;
+}
 
-#mute {}
+#mute {
+	float: right;
+}
 
-#volume-bar {}
+#volume-bar {
+	width: 15%;
+	margin-right: 0px;
+	margin-left: 2%;
+	float: right;
+}
 
 #full-screen {
+	float: right;
+	margin-right: 2%;
+	margin-left: 2%;
 }
 
 #description {
