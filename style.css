@@ -4,18 +4,19 @@ head {}
 
 body {}
 
-article {}
-
-footer {}
+#footer {
+	position: absolute;
+	bottom: 0px;
+	display: flex;
+	justify-content: space-around;
+	margin: auto;
+	background-color: red;
+}
 
 h1 {}
 
 p {}
 
-.row {
-	background-color: #CCCCCC;
-	margin-bottom: 20px;
-}
 
 #title {
 	
@@ -36,11 +37,20 @@ p {}
 	margin-top: 20px;
 }
 
-#video-player {}
+#aboutus {
+	background-color: #CCCCCC;
+}
+
+#video-player {
+	position: relative;
+}
 
 #video {}
 
-#video-controls {}
+#video-controls {
+	position: absolute;
+	bottom: 5px;
+}
 
 #play-pause {}
 
@@ -50,4 +60,14 @@ p {}
 
 #volume-bar {}
 
-#full-screen {}
+#full-screen {
+}
+
+#description {
+	background-color: #CCCCCC;
+}
+
+#videolist {
+	background-color: #CCCCCC;
+	margin-top: 30px;
+}
