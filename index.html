@@ -17,24 +17,34 @@
 <div class="container">
 	
 	<div class="row">
-		<div class="col-xs-6 col-sm-offset-3 col-sm-6 col-md-offset-3 col-md-6 ">
-			<div id="title">Codeplay</div>
+		<div class=" col-xs-offset-1 col-xs-6 col-sm-7 hidden-md hidden-lg ">
+			<div id="titlesxsm"><img src="bilder/logga.png" alt="CODEPLAY" width="75%"></div>
 		</div>
-		<div class="col-xs-6 col-sm-3 hidden-md hidden-lg "><a id="about" href="">ABOUT US 1</a></div>
+
+		<div class="hidden-xs hidden-sm col-sm-6 col-md-offset-3 col-md-6 ">	
+			<div id="titlemdlg"><img src="bilder/logga.png" alt="CODEPLAY" width="50%"></div>
+		</div>
+		
+		<div class="col-xs-5 hidden-sm hidden-md hidden-lg "><a id="about" href="#bottom"><img src="bilder/aboutxs.png" alt="ABOUT US"></a></div>
+		<div class="hidden-xs col-sm-5 hidden-md hidden-lg "><a id="about" href="#bottom"><img src="bilder/aboutsm.png" alt="ABOUT US"></a></div>
 	</div>
 
 	<div class="row">
-		<div class="hidden-xs hidden-sm col-md-3" id="aboutus">ABOUT US 2</div>
+		<div class="hidden-xs hidden-sm col-md-3" id="aboutus">
+			ABOUT US 
+			<img src="bilder/face.jpg" alt="Bild på ossss" width="200px" height="200px">
+			<p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu quam iaculis, auctor ipsum ut, rhoncus ipsum. Mauris tincidunt, turpis vel tristique bibendum, erat lacus elementum massa, in ultricies metus nisi quis elit. Praesent ac facilisis urna, sit amet ultrices sapien.</p>
+		</div>
 
 		<div class="col-xs-12 col-sm-12 col-md-6">
 			<div id= "video-player" width="100%">
 				
 				<video id= "video" width="100%">
-					<source src="videos/exempelvideo1.mp4" type="video/mp4">
+					<source src="videos/exempelvideo5.mp4" type="video/mp4">
 
 					Your browser does not support the video tag.
 				</video> 
-				
+				<div id="controlbackgound"></div>
 				<nav id="video-controls">
 					<input type="image" src="bilder/play.png" id="play-pause">
 					<input type="range" id="seek-bar" value="0">
@@ -45,25 +55,47 @@
 			</div>
 		</div>
 
-		<div class="hidden-xs hidden-sm col-md-3" id="description">VIDEO DESCRIPTION 1</div>
+		<div class="hidden-xs hidden-sm col-md-3" id="description">
+			VIDEO1 0:10
+			<p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu quam iaculis, auctor ipsum ut, rhoncus ipsum. Mauris tincidunt, turpis vel tristique bibendum, erat lacus elementum massa, in ultricies metus nisi quis elit. Praesent ac facilisis urna, sit amet ultrices sapien.</p>
+		</div>
 	</div>
 
 	<div class="row">
-		<div class="col-xs-12 col-sm-12 hidden-md hidden-lg" id="description">VIDEO DESCRIPTION 2</div>
+		<div class="col-xs-12 col-sm-12 hidden-md hidden-lg" id="description">
+			VIDEO1 0:10
+			<p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu quam iaculis, auctor ipsum ut, rhoncus ipsum. Mauris tincidunt, turpis vel tristique bibendum, erat lacus elementum massa, in ultricies metus nisi quis elit. Praesent ac facilisis urna, sit amet ultrices sapien.</p>
+		</div>
 	</div>
 
 
 	<div class="row">
-	  <div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-md-offset-3" id="videolist">VIDEO LIST</div>
+	  	<div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-md-offset-3" id="videolist">
+	  		VIDEO LIST<br>
+	  		<img src="bilder/startimg1.jpg" width="30%">
+	  		VIDEO2 04:38
+			<p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu quam iaculis, auctor ipsum ut, rhoncus ipsum. Mauris tincidunt, turpis vel tristique bibendum, erat lacus elementum massa, in ultricies metus nisi quis elit. Praesent ac facilisis urna, sit amet ultrices sapien.</p>	  		
+	  	</div>
 	</div>
 
 
 
-	<div class="row" id="footer">
-	  <div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-md-offset-3">
-	  	<footer>
+	<div class="row">
+	  <div class="hidden-xs hidden-sm col-md-offset-3 col-md-6 col-md-3">
+	  	<footer id="footmdlg">
 			<p>© Made by Felix and Liza ©</p>
 		</footer>
+	  </div>
+
+	  	  <div class="col-xs-12 col-sm-12 hidden-md hidden-lg">
+	  	<footer id="footxssm">
+	  		ABOUT US
+			<img src="bilder/face.jpg" alt="Bild på ossss" width="20%">
+			<p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu quam iaculis, auctor ipsum ut, rhoncus ipsum. Mauris tincidunt, turpis vel tristique bibendum, erat lacus elementum massa, in ultricies metus nisi quis elit. Praesent ac facilisis urna, sit amet ultrices sapien.</p>
+		</footer>
+	  </div>
+	  <div class="hidden-xs hidden-sm col-md-offset-3 col-md-6 col-md-3">
+	  	<div id="totop"><a href="#top"><img src="bilder/top.png" alt="TOP" width="30%"></a></div>
 	  </div>
 	</div>
 
@@ -75,6 +107,6 @@
 	<script src="script.js"></script>
 
 </div>
-
+<a name="bottom">
 <body>
 </html>

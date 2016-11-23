@@ -1,43 +1,34 @@
-html {}
+@media (orientation: landscape) {
 
-head {}
-
-body {}
-
-#footer {
-	position: absolute;
-	bottom: 0px;
-	display: flex;
-	justify-content: space-around;
-	background-color: red;
 }
 
-h1 {}
 
-p {}
+#container {
+	margin: 0px;
+}
 
-
-#title {
-	
-	display: flex;
-	justify-content: space-around;
+.titlexssm {
+	height: 50px;
 	margin: auto;
 	margin-bottom: 30px;
 	margin-top: 20px;
-	background-color: red;
+}
+
+.titlemdlg {
+	height: 50px;
+	margin: auto;
+	margin-bottom: 30px;
+	margin-top: 20px;
 }
 
 #about {
-	width: 100px;
-	display: flex;
-	justify-content: space-around;
-	margin: auto;
-	margin-bottom: 30px;
-	margin-top: 20px;
+	float: right;
 }
 
 #aboutus {
-	background-color: #CCCCCC;
+	background-color: #00ADEE;
+	padding: 20px;
+	border-radius: 15px;
 }
 
 #video-player {
@@ -48,44 +39,127 @@ p {}
 
 #video-controls {
 	position: absolute;
-	bottom: 7px;
-	height: 7%;
+	bottom: 2%;
+	height: 8%;
 	width: 100%;
+	z-index: 2147483647;
+}
+
+.controlbackgound {
+	position: absolute;
+	bottom: 2%;
+	height: 8%;
+	width: 100%;
+	background-color: #000000;
+	opacity: 0.5;
 }
 
 #play-pause {
+	width: 5%;
 	float: left;
 	margin-right: 3%;
 	margin-left: 2%
+
 }
 
 #seek-bar {
-	width: 55%;
 	float: left;
+	width: 50%;
+}
+video::-webkit-media-controls {
+  display:none !important;
+}
+video::-webkit-media-controls-enclosure {
+  display:none !important;
+}
+
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  	width: 100%; /* Specific width is required for Firefox. */
+  	background: transparent; /* Otherwise white in Chrome */
+  	margin-top: 1.3%;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=image]:focus {
+  outline: none;
+}
+
+
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	height: 23px;
+	width: 23px;
+	background-image: url("bilder/thumb.png");
+	cursor: pointer;
+	margin-top: -7px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+	margin-bottom: -7px;
+}
+
+input[type=range]::-ms-track {
+ 	background: transparent; 
+  	border-color: transparent;
+  	color: transparent;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+	cursor: pointer;
+  	background: #FFFFFF;
+  	border-radius: 10px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #FFFFFF;
 }
 
 #mute {
 	float: right;
+	width: 5%;
 }
 
 #volume-bar {
 	width: 15%;
-	margin-right: 0px;
 	margin-left: 2%;
 	float: right;
 }
 
 #full-screen {
 	float: right;
+	width: 5%;
 	margin-right: 2%;
 	margin-left: 2%;
+	margin-top: 0.5%;
 }
+
 
 #description {
 	background-color: #CCCCCC;
+	padding: 20px;
 }
 
 #videolist {
 	background-color: #CCCCCC;
 	margin-top: 30px;
+	float: left;
+}
+
+.footxssm {
+	background-color: #00ADEE;
+	margin-top: 20%;
+}
+
+.footmdlg {
+	background-color: #00ADEE;
+	margin-top: 20%;
+	position: fixed;
+	bottom: 0px;
+}
+
+#totop {
+	position: fixed;
+	right: 5%;
+	bottom: 5%;
 }
