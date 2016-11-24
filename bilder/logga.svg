@@ -29,8 +29,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.5"
-     inkscape:cx="130.77652"
-     inkscape:cy="950.47179"
+     inkscape:cx="441.73636"
+     inkscape:cy="827.51716"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -51,7 +51,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -59,26 +59,57 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.84566367;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5252"
+       width="1746.5375"
+       height="364.15436"
+       x="-494.26871"
+       y="-28.714962"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <g
-       id="g4326"
-       transform="matrix(0.46838943,0,0,0.46838943,159.71597,22.783803)"
-       inkscape:export-filename="C:\Users\pelit4\Documents\codeplay-2.0\bilder\logga.png"
+       id="g5254"
+       transform="matrix(2.3227255,0,0,2.3227255,-500.08062,-11.144276)"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90">
-      <g
-         transform="translate(-10.101525,1.0101525)"
-         id="g4316">
-        <circle
-           style="opacity:1;fill:#00adee;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           id="path4140"
-           cx="140"
-           cy="102.36219"
-           r="70" />
-        <path
-           inkscape:connector-curvature="0"
-           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="m 91.306641,102.36133 a 48.75,48.75 0 0 0 48.746089,48.65429 48.75,48.75 0 0 0 48.7461,-48.65429 l -97.492189,0 z"
-           id="circle4161" />
+      <flowRoot
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\pelit4\Documents\codeplay-2.0\bilder\logga.png"
+         transform="matrix(2.9893219,0,0,2.9893219,-384.96883,-258.21735)"
+         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#00adee;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         id="flowRoot4758"
+         xml:space="preserve"><flowRegion
+           id="flowRegion4760"><rect
+             style="fill:#00adee;fill-opacity:1"
+             y="87.362206"
+             x="140"
+             height="75"
+             width="225"
+             id="rect4762" /></flowRegion><flowPara
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#00adee;fill-opacity:1"
+           id="flowPara4764">C   DEPLAY</flowPara></flowRoot>      <g
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="C:\Users\pelit4\Documents\codeplay-2.0\bilder\logga.png"
+         transform="matrix(0.63249325,0,0,0.63249325,87.193559,12.307274)"
+         id="g4326">
+        <g
+           id="g4316"
+           transform="translate(-10.101525,1.0101525)">
+          <circle
+             r="70"
+             cy="102.36219"
+             cx="140"
+             id="path4140"
+             style="opacity:1;fill:#00adee;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+          <path
+             id="circle4161"
+             d="m 91.306641,102.36133 a 48.75,48.75 0 0 0 48.746089,48.65429 48.75,48.75 0 0 0 48.7461,-48.65429 l -97.492189,0 z"
+             style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             inkscape:connector-curvature="0" />
+        </g>
       </g>
     </g>
     <flowRoot
@@ -101,21 +132,5 @@
            height="80"
            x="380"
            y="12.362205" /></flowRegion><flowPara
-         id="flowPara4560" /></flowRoot>    <flowRoot
-       xml:space="preserve"
-       id="flowRoot4758"
-       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#00adee;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="matrix(2.213726,0,0,2.213726,-189.94131,-177.55173)"
-       inkscape:export-filename="C:\Users\pelit4\Documents\codeplay-2.0\bilder\logga.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"><flowRegion
-         id="flowRegion4760"><rect
-           id="rect4762"
-           width="225"
-           height="75"
-           x="140"
-           y="87.362206"
-           style="fill:#00adee;fill-opacity:1" /></flowRegion><flowPara
-         id="flowPara4764"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:'Arial Bold';fill:#00adee;fill-opacity:1">C   DEPLAY</flowPara></flowRoot>  </g>
+         id="flowPara4560" /></flowRoot>  </g>
 </svg>

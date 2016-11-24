@@ -65,7 +65,7 @@ window.onload = function() {
     		video.webkitRequestFullscreen(); // Chrome and Safari
   		}
 	});
-
+  
 	// Event listener for the seek bar
 	seekBar.addEventListener("change", function() {
   		// Calculate the new time
@@ -100,3 +100,7 @@ window.onload = function() {
   		video.volume = volumeBar.value;
 	});
 }
+
+
+
+
