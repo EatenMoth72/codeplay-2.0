@@ -25,7 +25,7 @@ window.onload = function() {
     		// Play the video
     		video.play();
 
-    		// Update the button text to 'Pause'
+    		// Update the button image to 'Pause'
     		playButton.src= "bilder/pause.png";
   		}
 
@@ -33,7 +33,7 @@ window.onload = function() {
     		// Pause the video
     		video.pause();
 
-    		// Update the button text to 'Play'
+    		// Update the button image to 'Play'
     		playButton.src= "bilder/play.png";
   		}
 	});
@@ -44,7 +44,7 @@ window.onload = function() {
     	// Mute the video
    		video.muted = true;
 
-    	// Update the button text
+    	// Update the button image to 'unmute'
     	muteButton.innerHTML = "Unmute";
   		} 
 
@@ -52,7 +52,7 @@ window.onload = function() {
     		// Unmute the video
     		video.muted = false;
 
-    		// Update the button text
+    		// Update the button image to 'mute'
     		muteButton.innerHTML = "Mute";
   		}
 	});
@@ -61,43 +61,54 @@ window.onload = function() {
 	fullScreenButton.addEventListener("click", function() {
   		if (video.requestFullscreen) {
     		video.requestFullscreen();
+
+        // Update the button image to 'minimizescreen'
+        fullScreenButton.src= "bilder/minimizescreen.png";
   		} 
 
   		else if (video.mozRequestFullScreen) {
     		video.mozRequestFullScreen(); // Firefox
+
+        // Update the button image to 'minimizescreen'
+        fullScreenButton.src= "bilder/minimizescreen.png";
   		} 
 
   		else if (video.webkitRequestFullscreen) {
     		video.webkitRequestFullscreen(); // Chrome and Safari
+
+        // Update the button image to 'minimizescreen'
+        fullScreenButton.src= "bilder/minimizescreen.png";
   		}
 
       controlbar.classList.add("fullscreen-controls")
-      document.getElementById("fullScreenButton").style.visibility = "hidden";
+
+      if (video.requestFullscreen) {
+            // exit full-screen
+         if (document.exitFullscreen) {
+              document.exitFullscreen();
+          } 
+
+          else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+          } 
+
+          else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+          } 
+
+          else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+          }
+
+          // Update the button image to 'fullscreen'
+          fullScreenButton.src= "bilder/fullscreen.png";
+
+          controlbar.classList.remove("fullscreen-controls")
+      }
+
 	});
 
 
-    // Event listener for the minimizescreen button
-  minimizeScreenButton.addEventListener("click", function() {
-      // exit full-screen
-      if (document.exitFullscreen) {
-          document.exitFullscreen();
-      } 
-
-      else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-      } 
-
-      else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-      } 
-
-      else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
-      }
-
-      controlbar.classList.remove("fullscreen-controls")
-      document.getElementById("minimizeScreenButton").style.visibility = "hidden";
-  });
 
 
 	// Event listener for the seek bar
