@@ -41,19 +41,19 @@ window.onload = function() {
 	// Event listener for the mute button
 	muteButton.addEventListener("click", function() {
   		if (video.muted == false) {
-    	// Mute the video
-   		video.muted = true;
+      	// Mute the video
+     		video.muted = true;
 
-    	// Update the button image to 'unmute'
-    	muteButton.innerHTML = "Unmute";
-  		} 
+      	// Update the button image to 'unmute'
+      	muteButton.src = "bilder/mute.png";
+    		} 
 
   		else {
     		// Unmute the video
     		video.muted = false;
 
     		// Update the button image to 'mute'
-    		muteButton.innerHTML = "Mute";
+    		muteButton.src = "bilder/volume.png";
   		}
 	});
 
