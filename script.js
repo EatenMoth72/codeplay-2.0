@@ -39,7 +39,7 @@ window.onload = function() {
    		video.muted = true;
 
     	// Update the button text
-    	muteButton.innerHTML = "Unmute";
+    	muteButton.src = "bilder/mute.png";
   		} 
 
   		else {
@@ -47,7 +47,7 @@ window.onload = function() {
     		video.muted = false;
 
     		// Update the button text
-    		muteButton.innerHTML = "Mute";
+    		muteButton.src = "bilder/volume.png";
   		}
 	});
 
