@@ -3,14 +3,20 @@ window.onload = function() {
   // Video
   var video = document.getElementById("video");
 
+  // Video Controllers
+  var controlbar = document.getElementById("video-controls");
+
   // Buttons
   var playButton = document.getElementById("play-pause");
   var muteButton = document.getElementById("mute");
   var fullScreenButton = document.getElementById("full-screen");
+  var minimizeScreenButton = document.getElementById("minimizescreen");
 
   // Sliders
   var seekBar = document.getElementById("seek-bar");
   var volumeBar = document.getElementById("volume-bar");
+
+
 
 
 // Event listener for the play/pause button
@@ -64,8 +70,36 @@ window.onload = function() {
   		else if (video.webkitRequestFullscreen) {
     		video.webkitRequestFullscreen(); // Chrome and Safari
   		}
+
+      controlbar.classList.add("fullscreen-controls")
+      document.getElementById("fullScreenButton").style.visibility = "hidden";
 	});
-  
+
+
+    // Event listener for the minimizescreen button
+  minimizeScreenButton.addEventListener("click", function() {
+      // exit full-screen
+      if (document.exitFullscreen) {
+          document.exitFullscreen();
+      } 
+
+      else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } 
+
+      else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } 
+
+      else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+
+      controlbar.classList.remove("fullscreen-controls")
+      document.getElementById("minimizeScreenButton").style.visibility = "hidden";
+  });
+
+
 	// Event listener for the seek bar
 	seekBar.addEventListener("change", function() {
   		// Calculate the new time

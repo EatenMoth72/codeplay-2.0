@@ -16,6 +16,11 @@
 	position: absolute;
 	z-index: 2147483647;
 }
+ 
+.fullscreen-controls {
+	left: 0;
+}
+
 
 /*
 .controllerbackgound {
@@ -101,6 +106,13 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 	margin-top: 0.5%;
 }
 
+#minimizescreen {
+	float: right;
+	width: 5%;
+	margin-right: 2%;
+	margin-left: 2%;
+	margin-top: 0.5%;
+}
 
 #description {
 	background-color: #CCCCCC;
@@ -111,6 +123,12 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 	background-color: #CCCCCC;
 	margin-top: 30px;
 	float: left;
+}
+
+.videorow {
+	border-top: 2px solid #000000;
+	margin-top: 10px;
+	padding-top: 10px;
 }
 
 .footxssm {
@@ -281,89 +299,5 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 	input[type=range] {
 	  	margin-top: 1.6%;
-	}
-}
-
-
-
-
-
-
-
-@media only screen and (max-width : 320px) and (-ms-view-state: fullscreen-landscape) {
-	#video-controls {
-		height: %;
-		width: %;
-	}
-}
-
-
-@media only screen and (min-width : 321px) and (max-width : 414px) and (-ms-view-state: fullscreen-landscape) {
-	#video-controls {
-		height: %;
-		width: %;
-	}
-}
-
-
-@media only screen and (min-width : 415px) and (max-width : 767px) and (-ms-view-state: fullscreen-landscape) {
-	#video-controls {
-		height: %;
-		width: %;
-	}
-}
-
-@media only screen and (min-device-width : 768px) and (max-device-width : 1224px) and (-ms-view-state: fullscreen-landscape) {
-	#video-controls {
-		height: %;
-		width: %;
-	}
-}
-
-@media only screen and (min-width : 1224px) and (-ms-view-state: fullscreen-landscape) {
-	#video-controls {
-		height: 8% !important;
-		width: 50% !important;
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-@media only screen and (max-width : 320px) and (-ms-view-state: fullscreen-portrait) {
-	#video-controls {
-		height: %;
-		width: %;
-	}
-}
-
-
-@media only screen and (min-width : 321px) and (max-width : 414px) and (-ms-view-state: fullscreen-portrait) {
-	#video-controls {
-		height: %;
-		width: %;
-	}
-}
-
-
-@media only screen and (min-width : 415px) and (max-width : 767px) and (-ms-view-state: fullscreen-portrait) {
-	#video-controls {
-		height: %;
-		width: %;
-	}
-}
-
-@media only screen and (min-device-width : 768px) and (max-device-width : 1224px) and (-ms-view-state: fullscreen-portrait) {
-	#video-controls {
-		height: %;
-		width: %;
 	}
 }
