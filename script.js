@@ -26,7 +26,7 @@ window.onload = function() {
     		video.play();
 
     		// Update the button text to 'Pause'
-    		playButton.innerHTML = src= "bilder/pause.png";
+    		playButton.src= "bilder/pause.png";
   		}
 
   		else {
@@ -34,7 +34,7 @@ window.onload = function() {
     		video.pause();
 
     		// Update the button text to 'Play'
-    		playButton.innerHTML = src= "bilder/play.png";
+    		playButton.src= "bilder/play.png";
   		}
 	});
 
