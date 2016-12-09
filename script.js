@@ -10,7 +10,7 @@ window.onload = function() {
   var playButton = document.getElementById("play-pause");
   var muteButton = document.getElementById("mute");
   var fullScreenButton = document.getElementById("full-screen");
-  var minimizeScreenButton = document.getElementById("minimizescreen");
+  var minimizeScreenButton = document.getElementById("minimize-screen");
 
   // Sliders
   var seekBar = document.getElementById("seek-bar");
@@ -41,19 +41,19 @@ window.onload = function() {
 	// Event listener for the mute button
 	muteButton.addEventListener("click", function() {
   		if (video.muted == false) {
-      	// Mute the video
-     		video.muted = true;
+    	// Mute the video
+   		video.muted = true;
 
-      	// Update the button image to 'unmute'
-      	muteButton.src = "bilder/mute.png";
-    		} 
+    	// Update the button image to 'unmute'
+    	muteButton.innerHTML = "Unmute";
+  		} 
 
   		else {
     		// Unmute the video
     		video.muted = false;
 
     		// Update the button image to 'mute'
-    		muteButton.src = "bilder/volume.png";
+    		muteButton.innerHTML = "Mute";
   		}
 	});
 
@@ -63,52 +63,56 @@ window.onload = function() {
     		video.requestFullscreen();
 
         // Update the button image to 'minimizescreen'
-        fullScreenButton.src= "bilder/minimizescreen.png";
+        //fullScreenButton.src= "bilder/minimizescreen.png";
   		} 
 
   		else if (video.mozRequestFullScreen) {
     		video.mozRequestFullScreen(); // Firefox
 
         // Update the button image to 'minimizescreen'
-        fullScreenButton.src= "bilder/minimizescreen.png";
+        //fullScreenButton.src= "bilder/minimizescreen.png";
   		} 
 
   		else if (video.webkitRequestFullscreen) {
     		video.webkitRequestFullscreen(); // Chrome and Safari
 
         // Update the button image to 'minimizescreen'
-        fullScreenButton.src= "bilder/minimizescreen.png";
+        //fullScreenButton.src= "bilder/minimizescreen.png";
   		}
 
       controlbar.classList.add("fullscreen-controls")
-
-      if (video.requestFullscreen) {
-            // exit full-screen
-         if (document.exitFullscreen) {
-              document.exitFullscreen();
-          } 
-
-          else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-          } 
-
-          else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-          } 
-
-          else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
-          }
-
-          // Update the button image to 'fullscreen'
-          fullScreenButton.src= "bilder/fullscreen.png";
-
-          controlbar.classList.remove("fullscreen-controls")
-      }
-
 	});
 
 
+    // Event listener for the minimizescreen button
+  minimizeScreenButton.addEventListener("click", function() {
+      // exit full-screen
+      if (document.exitFullscreen) {
+          document.exitFullscreen();
+
+          //fullScreenButton.src= "bilder/fullscreen.png";
+      } 
+
+      else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+
+          //fullScreenButton.src= "bilder/fullscreen.png";
+      } 
+
+      else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+
+        //fullScreenButton.src= "bilder/fullscreen.png";
+      } 
+
+      else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+
+        //fullScreenButton.src= "bilder/fullscreen.png";
+      }
+
+      controlbar.classList.remove("fullscreen-controls")
+  });
 
 
 	// Event listener for the seek bar
