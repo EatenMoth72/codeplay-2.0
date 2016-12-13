@@ -1,15 +1,17 @@
 <?php
 include('setup.php');
 
-if (empty($_SESSION['VideoID'])) {
-	$_SESSION['VideoID'] = 1;
-}	
+session_name('codeplay');
+session_start();
 
-if (isset($_POST['changevideo'])) {
-	$VideoID = $row['VideoID'];
-	print_r($videoID);
+if (empty($_SESSION['VideoID'])) {
+
+	$_SESSION['VideoID'] = 2;
 }
 
+if (isset($_POST['changevideo'])) {
+	$_SESSION['VideoID'] = $_POST['button'];
+}	
 ?>
 
 <!DOCTYPE html>
@@ -45,16 +47,16 @@ if (isset($_POST['changevideo'])) {
 
 	<div class="row">
 		<div class="hidden-xs hidden-sm col-md-3" id="aboutus">
-			ABOUT US 
-			<img src="bilder/face.jpg" alt="Bild på ossss" width="200px" height="200px">
-			<p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu quam iaculis, auctor ipsum ut, rhoncus ipsum. Mauris tincidunt, turpis vel tristique bibendum, erat lacus elementum massa, in ultricies metus nisi quis elit. Praesent ac facilisis urna, sit amet ultrices sapien.</p>
+			<div id="list">ABOUT US</div> 
+			<img src="bilder/about.jpg" alt="Bild på ossss" width="100%">
+			<p class="white"><br>Vi är två elever från NTI-skolan i Umeå, där vi går ett fjärde tekniskt år(T4) inom mjukvarudesign. Den här hemsidan har vi gjort under våran första praktikperiod på Codemill. Våran uppgift var att göra en HTML5 videospelare med egna kontroller, även kunna byta mellan några olika videor. Hemsidan skulle kunna passa bra både olika enheter (mobil, suftplatta, dator). Det här är resultatet vi kom fram till och ni får gärna ge feedback till oss på:<br>liza_pettersson_@hotmail.com<br>eller<br>slaktarn95@hotmail.com<br><b>Tack för ditt besök!<br>MVH Liza Pettersson & Felix Sjövik</b><br>©</p>
 		</div>
 
 		<div class="col-xs-12 col-sm-12 col-md-6">
 			<div id= "video-player" width="100%">			
 				<?php 
 
-		  		$query = "SELECT * FROM videos WHERE VideoID = '" . $VideoID . "'";
+		  		$query = "SELECT * FROM videos WHERE VideoID = '" . $_SESSION['VideoID'] . "'";
 
 		  		$result = query($query);
 		  	
@@ -76,61 +78,70 @@ if (isset($_POST['changevideo'])) {
 				</nav>
 			</div>
 		</div>
+		<?php 
 
-		<div class="hidden-xs hidden-sm col-md-3" id="description">
-			VIDEO1 0:10
-			<p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu quam iaculis, auctor ipsum ut, rhoncus ipsum. Mauris tincidunt, turpis vel tristique bibendum, erat lacus elementum massa, in ultricies metus nisi quis elit. Praesent ac facilisis urna, sit amet ultrices sapien!</p>
+  		$query = "SELECT * FROM videos WHERE VideoID = '" . $_SESSION['VideoID'] . "'";
+
+  		$result = query($query);
+  	
+
+	  	while ($row = mysqli_fetch_assoc($result)) {
+	  		echo "<div class='hidden-xs hidden-sm col-md-3' id='description'>";
+			echo '<b>' . $row['Title'] . '</b><b>' . $row['Time'] . '</b>';
+			echo '<p><br>' . $row['Description'] . '</p></div></div>';
+
+			echo "<div class='row'><div class='col-xs-12 col-sm-12 hidden-md hidden-lg' id='description'>";
+			echo '<b>' . $row['Title'] . '</b><b>' . $row['Time'] . '</b>';
+			echo '<p><br>' . $row['Description'] . '</p></div></div>';		
+		}
+		?>
+
 		</div>
-	</div>
+		<div class="row">
+		  	<div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-md-offset-3" id="videolist">
+		  		<div id="list">VIDEO LIST</div>
+		  		<table><?php 
 
-	<div class="row">
-		<div class="col-xs-12 col-sm-12 hidden-md hidden-lg" id="description">
-			VIDEO1 0:10
-			<p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu quam iaculis, auctor ipsum ut, rhoncus ipsum. Mauris tincidunt, turpis vel tristique bibendum, erat lacus elementum massa, in ultricies metus nisi quis elit. Praesent ac facilisis urna, sit amet ultrices sapien.</p>
+		  		$query = "SELECT * FROM videos ORDER BY date DESC";
+
+		  		$result = query($query);
+		  	
+
+			  	while ($row = mysqli_fetch_assoc($result)) {
+					echo "<tr><td><img src='bilder/startimg" . $row['VideoID'] . '.' . $row['ImgType'] .  "' width='90%'><br>";
+					echo '<b>' . $row['Time'] . '</b><br>' . $row['Creator'] . '<br>' . $row['Date'] . '</td>';
+					echo "<td><p><b>" . $row['Title'] . '</b><br>' . $row['Description'] . '</p>';
+
+					echo "<form method='post'><input type='hidden' value='" . $row['VideoID'] . "' name='button'>";
+					echo "<input type='submit' value='' name='changevideo' class='changevideo'></form></td></tr>";
+					
+
+				}
+					
+			  	?></table>	
+		  	</div>
 		</div>
-	</div>
-
-
-	<div class="row">
-	  	<div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-md-offset-3" id="videolist">
-	  		<div id="list">VIDEO LIST</div>
-	  		<table><?php 
-
-	  		$query = "SELECT * FROM videos ORDER BY date DESC";
-
-	  		$result = query($query);
-	  	
-
-		  	while ($row = mysqli_fetch_assoc($result)) {
-				echo "<tr><td><img src='bilder/startimg" . $row['VideoID'] . '.' . $row['ImgType'] .  "' width='90%'><br>";
-				echo $row['Time'] . '<br>' . $row['Creator'] . '<br>' . $row['Date'] . '</td>';
-				echo "<td><a href='' value='" . $row['VideoID'] . "' name='changevideo'><p><b>" . $row['Title'] . '</b><br>' . $row['Description'] . '</p></a></td>';			
-			}
-				
-		  	?></table>	
-	  	</div>
-	</div>
 
 
 
-	<div class="row">
-	  <div class="hidden-xs hidden-sm col-md-offset-3 col-md-6 col-md-3">
-	  	<footer id="footmdlg">
-			<p>© Made by Felix and Liza ©</p>
-		</footer>
-	  </div>
+		<div class="row">
+		  <div class="hidden-xs hidden-sm col-md-offset-3 col-md-6 col-md-3">
+		  	<footer id="footmdlg">
+				<p>© Made by Felix and Liza ©</p>
+			</footer>
+		  </div>
 
-	  	  <div class="col-xs-12 col-sm-12 hidden-md hidden-lg">
-	  	<footer id="footxssm">
-	  		ABOUT US
-			<img src="bilder/face.jpg" alt="Bild på ossss" width="20%">
-			<p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eu quam iaculis, auctor ipsum ut, rhoncus ipsum. Mauris tincidunt, turpis vel tristique bibendum, erat lacus elementum massa, in ultricies metus nisi quis elit. Praesent ac facilisis urna, sit amet ultrices sapien.</p>
-		</footer>
-	  </div>
-	  <div class="hidden-xs hidden-sm col-md-offset-3 col-md-6 col-md-3">
-	  	<div id="totop"><a href="#top"><img src="bilder/top.png" alt="TOP" width="30%"></a></div>
-	  </div>
-	</div>
+		  	  <div class="col-xs-12 col-sm-12 hidden-md hidden-lg">
+		  	<footer id="footxssm">
+		  		ABOUT US
+				<img src="bilder/about.jpg" alt="Bild på ossss" width="20%">
+				<p class="white"><br>Vi är två elever från NTI-skolan i Umeå, där vi går ett fjärde tekniskt år(T4) inom mjukvarudesign. Den här hemsidan har vi gjort under våran första praktikperiod på Codemill. Våran uppgift var att göra en HTML5 videospelare med egna kontroller, även kunna byta mellan några olika videor. Hemsidan skulle kunna passa bra både olika enheter (mobil, suftplatta, dator). Det här är resultatet vi kom fram till och ni får gärna ge feedback till oss på:<br>liza_pettersson_@hotmail.com<br>eller<br>slaktarn95@hotmail.com<br><b>Tack för ditt besök!<br>MVH Liza Pettersson & Felix Sjövik<br>©</b></p>
+			</footer>
+		  </div>
+		  <div class="hidden-xs hidden-sm col-md-offset-3 col-md-6 col-md-3">
+		  	<div id="totop"><a href="#top"><img src="bilder/top.png" alt="TOP" width="30%"></a></div>
+		  </div>
+		</div>
 
 
 

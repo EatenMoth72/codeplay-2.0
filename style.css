@@ -4,8 +4,13 @@
 
 #aboutus {
 	background-color: #00ADEE;
-	padding: 20px;
+	padding-left: 2%;
+	padding-right: 2%;
 	border-radius: 15px;
+}
+
+.white {
+	color: white;
 }
 
 #video-player {
@@ -21,16 +26,6 @@
 	left: 0;
 
 }
-
-
-/*
-.controllerbackgound {
-	position: absolute;
-	bottom: 2%;
-	height: 10%;
-	width: 100%;
-	z-index: ;
-}*/
 
 #play-pause {
 	width: 5%;
@@ -124,6 +119,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 	background-color: #CCCCCC;
 	margin-top: 30px;
 	float: left;
+
 }
 
 #list {
@@ -136,25 +132,28 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 tr {
 	border-top: 2px solid #000000;
+	position: relative;
 }
 
 td {
 	position: relative;
 }
 
-a {
-	text-decoration: none !important;
-	color: #000000 !important;
-}
-
-a:hover {
-	text-decoration: none !important;
-	color: #000000 !important;
+.changevideo {
+	background-color: transparent;
+	border-style: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
 }
 
 .footxssm {
 	background-color: #00ADEE;
 	margin-top: 20%;
+
 }
 
 .footmdlg {
