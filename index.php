@@ -12,6 +12,7 @@ if (empty($_SESSION['VideoID'])) {
 if (isset($_POST['changevideo'])) {
 	$_SESSION['VideoID'] = $_POST['button'];
 }	
+
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +50,7 @@ if (isset($_POST['changevideo'])) {
 		<div class="hidden-xs hidden-sm col-md-3" id="aboutus">
 			<div id="list">ABOUT US</div> 
 			<img src="bilder/about.jpg" alt="Bild på ossss" width="100%">
-			<p class="white"><br>Vi är två elever från NTI-skolan i Umeå, där vi går ett fjärde tekniskt år(T4) inom mjukvarudesign. Den här hemsidan har vi gjort under våran första praktikperiod på Codemill. Våran uppgift var att göra en HTML5 videospelare med egna kontroller, även kunna byta mellan några olika videor. Hemsidan skulle kunna passa bra både olika enheter (mobil, suftplatta, dator). Det här är resultatet vi kom fram till och ni får gärna ge feedback till oss på:<br>liza_pettersson_@hotmail.com<br>eller<br>slaktarn95@hotmail.com<br><b>Tack för ditt besök!<br>MVH Liza Pettersson & Felix Sjövik</b><br>©</p>
+			<p class="white"><br>Vi är två elever från NTI-skolan i Umeå, där vi går ett fjärde tekniskt år (T4) inom mjukvarudesign. Den här hemsidan har vi gjort under våran första praktikperiod på Codemill. Våran uppgift var att göra en HTML5 videospelare med egna kontroller, även kunna byta mellan några olika videor. Hemsidan skulle passa bra både olika enheter (mobil, suftplatta, dator). Det här är resultatet vi kom fram till och ni får gärna ge feedback till oss på:<br>liza_pettersson_@hotmail.com<br>eller<br>slaktarn95@hotmail.com<br><b>Tack för ditt besök!<br>MVH Liza Pettersson & Felix Sjövik</b><br>©</p>
 		</div>
 
 		<div class="col-xs-12 col-sm-12 col-md-6">
@@ -62,20 +63,21 @@ if (isset($_POST['changevideo'])) {
 		  	
 
 			  	while ($row = mysqli_fetch_assoc($result)) {
-					echo "<video id='video' width='100%'><source src='videos/exempelvideo" . $row['VideoID'] . '.';
-					echo $row['VideoType'] . "' type='video/" . $row['VideoType'] . "'>Your browser does not support the video tag.</video>";			
-				}
-					
-			  	?>
-				 
-				<nav id="video-controls">
-					<input type="image" src="bilder/play.png" id="play-pause">
-					<input type="range" id="seek-bar" value="0" >
-					<input type="image" src="bilder/fullscreen.png" id="full-screen">
-					<input type="image" src="bilder/minimizescreen.png" id="minimize-screen">
-					<input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
-					<input type="image" src="bilder/volume.png" id="mute">
-				</nav>
+					echo "<video id='video' width='100%'><source src='videos/" . $row['Video'];
+					echo "'type='video/mp4'>Your browser does not support the video tag.</video>";
+					?>		
+				
+					<nav id="video-controls">
+						<input type="image" src="bilder/play.png" id="play-pause">
+						<input type="range" id="seek-bar" value="0">
+						<input type="image" src="bilder/fullscreen.png" id="full-screen">
+						<input type="image" src="bilder/minimizescreen.png" id="minimize-screen">
+						<input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+						<input type="image" src="bilder/volume.png" id="mute">
+					</nav>																
+
+				<?php } ?>
+
 			</div>
 		</div>
 		<?php 
@@ -87,15 +89,15 @@ if (isset($_POST['changevideo'])) {
 
 	  	while ($row = mysqli_fetch_assoc($result)) {
 	  		echo "<div class='hidden-xs hidden-sm col-md-3' id='description'>";
-			echo '<b>' . $row['Title'] . '</b><b>' . $row['Time'] . '</b>';
+			echo '<nav><b>' . $row['Title'] . "</b><b id='time'>" . $row['Time'] . '</b></nav>';
 			echo '<p><br>' . $row['Description'] . '</p></div></div>';
 
 			echo "<div class='row'><div class='col-xs-12 col-sm-12 hidden-md hidden-lg' id='description'>";
-			echo '<b>' . $row['Title'] . '</b><b>' . $row['Time'] . '</b>';
+			echo '<nav><b>' . $row['Title'] . "</b><b id='time'>" . $row['Time'] . '</b></nav>';
 			echo '<p><br>' . $row['Description'] . '</p></div></div>';		
 		}
 		?>
-
+	
 		</div>
 		<div class="row">
 		  	<div class="col-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-md-offset-3" id="videolist">
@@ -108,7 +110,7 @@ if (isset($_POST['changevideo'])) {
 		  	
 
 			  	while ($row = mysqli_fetch_assoc($result)) {
-					echo "<tr><td><img src='bilder/startimg" . $row['VideoID'] . '.' . $row['ImgType'] .  "' width='90%'><br>";
+					echo "<tr><td><img src='bilder/" . $row['Image'] .  "' width='90%'><br>";
 					echo '<b>' . $row['Time'] . '</b><br>' . $row['Creator'] . '<br>' . $row['Date'] . '</td>';
 					echo "<td><p><b>" . $row['Title'] . '</b><br>' . $row['Description'] . '</p>';
 
@@ -133,13 +135,18 @@ if (isset($_POST['changevideo'])) {
 
 		  	  <div class="col-xs-12 col-sm-12 hidden-md hidden-lg">
 		  	<footer id="footxssm">
+		  		<a href="add.php"><img src="bilder/add.png" alt="Add video" width="10%">
+		  		<a href="#top"><img src="bilder/top.png" alt="TOP" width="10%"></a>
 		  		ABOUT US
 				<img src="bilder/about.jpg" alt="Bild på ossss" width="20%">
-				<p class="white"><br>Vi är två elever från NTI-skolan i Umeå, där vi går ett fjärde tekniskt år(T4) inom mjukvarudesign. Den här hemsidan har vi gjort under våran första praktikperiod på Codemill. Våran uppgift var att göra en HTML5 videospelare med egna kontroller, även kunna byta mellan några olika videor. Hemsidan skulle kunna passa bra både olika enheter (mobil, suftplatta, dator). Det här är resultatet vi kom fram till och ni får gärna ge feedback till oss på:<br>liza_pettersson_@hotmail.com<br>eller<br>slaktarn95@hotmail.com<br><b>Tack för ditt besök!<br>MVH Liza Pettersson & Felix Sjövik<br>©</b></p>
+				<p class="white"><br>Vi är två elever från NTI-skolan i Umeå, där vi går ett fjärde tekniskt år (T4) inom mjukvarudesign. Den här hemsidan har vi gjort under våran första praktikperiod på Codemill. Våran uppgift var att göra en HTML5 videospelare med egna kontroller, även kunna byta mellan några olika videor. Hemsidan skulle passa bra både olika enheter (mobil, suftplatta, dator). Det här är resultatet vi kom fram till och ni får gärna ge feedback till oss på:<br>liza_pettersson_@hotmail.com<br>eller<br>slaktarn95@hotmail.com<br><b>Tack för ditt besök!<br>MVH Liza Pettersson & Felix Sjövik<br>©</b></p>
 			</footer>
 		  </div>
 		  <div class="hidden-xs hidden-sm col-md-offset-3 col-md-6 col-md-3">
-		  	<div id="totop"><a href="#top"><img src="bilder/top.png" alt="TOP" width="30%"></a></div>
+		  	<div id="fixedmeny">
+		  		<a href="add.php"><img src="bilder/add.png" alt="Add video" width="20%"></a>
+		  		<a href="#top"><img src="bilder/top.png" alt="TOP" width="20%"></a>
+		  	</div>
 		  </div>
 		</div>
 

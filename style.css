@@ -82,6 +82,9 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   background: #FFFFFF;
 }
 
+#countdown {
+	color: #FFFFFF;
+}
 
 #mute {
 	float: right;
@@ -115,11 +118,14 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 	padding: 20px;
 }
 
+#time {
+	float: right;
+}
+
 #videolist {
 	background-color: #CCCCCC;
 	margin-top: 30px;
 	float: left;
-
 }
 
 #list {
@@ -150,6 +156,21 @@ td {
 	z-index: 10;
 }
 
+
+/* SKA GÖRAS !!
+			*footern i alla lägen (bakgrundsfärg och få bild och text att ligga på rätt ställen)
+			*hitta minst 2 nya videor, ju fler desto bättre så man kan visa "visa fler" knappen (korta, mindre än 100MB och mp4, byta ut 1an och 3an)
+			*fixa så vi har en knapp för fullskärm/minimize
+			*färg bakom thumbsaken bakom man drar i till videon (#00ADEE)
+LIZA		*"visa 10 till" knapp med funktion
+KIRREFIXAT	*placera tiden på den spelande videon (i beskrivningen) uppe till höger  				
+			*skriva ut tiden på videon (hinner nog inte göra nedräkning men är ett +)
+FELIX		*göra så om man har ljudet på 0 ska muteknappen ändras									
+			*på desktop är videolistan lika stor ifall man zoomar ut (gjorde inte de tidigare??)
+LIZA		*funktionen att lägga till en video
+*/
+
+
 .footxssm {
 	background-color: #00ADEE;
 	margin-top: 20%;
@@ -163,11 +184,46 @@ td {
 	bottom: 0px;
 }
 
-#totop {
+#fixedmeny {
 	position: fixed;
-	right: 5%;
+	right: 2%;
 	bottom: 5%;
 }
+
+
+/*till add.php sidan*/
+
+
+form > h2 {
+	color: #00ADEE !important;
+
+}
+
+input {
+	border-color: #00ADEE;
+	margin-bottom: 20px;
+}
+
+textarea {
+	border-color: #00ADEE;
+	min-width: 98%;
+	max-width: 98%;
+	min-height: 130px;
+	max-height: 130px;
+}
+
+#submit {
+	background-color: #00ADEE;
+	border-style: none;
+	width: 30%;
+	height: 50px;
+	margin-bottom: 50px;
+	color: #FFFFFF;
+	font-size: 2em;
+}
+
+/*för olika skärmstorlekar*/
+
 
 @media only screen and (max-width : 320px) and (orientation: portrait) {
 	

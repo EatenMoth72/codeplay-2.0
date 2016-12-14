@@ -44,16 +44,16 @@ window.onload = function() {
     	// Mute the video
    		video.muted = true;
 
-    	// Update the button image to 'unmute'
-    	muteButton.innerHTML = "Unmute";
+    	// Update the button image to 'mute'
+    	muteButton.src= "bilder/volume.png";
   		} 
 
   		else {
     		// Unmute the video
     		video.muted = false;
 
-    		// Update the button image to 'mute'
-    		muteButton.innerHTML = "Mute";
+    		// Update the button image to 'volume'
+    		muteButton.src= "bilder/mute.png";
   		}
 	});
 
@@ -152,4 +152,23 @@ window.onload = function() {
 
 
 
+var Videotime = new (function() {
+  var $stopwatch, // Stopwatch element on the page
+    decrementTime = 70, // Timer speed in milliseconds
+    currentTime = 0, 
+// Current time in hundredths of a second
+    updateTimer = function() {
+      $stopwatch.html(formatTime(currentTime));
+      currentTime -= decrementTime / 10;
+    },
+    init = function() {
+      $stopwatch = $('#stopwatch');
 
+Videotime.Timer = $.timer(updateTimer, decrementTime, true);
+    };
+  this.resetStopwatch = function() {
+    currentTime = 0;
+    this.Timer.stop().once();
+  };
+  $(init);
+});
