@@ -10,7 +10,6 @@ window.onload = function() {
   var playButton = document.getElementById("play-pause");
   var muteButton = document.getElementById("mute");
   var fullScreenButton = document.getElementById("full-screen");
-  var minimizeScreenButton = document.getElementById("minimize-screen");
 
   // Sliders
   var seekBar = document.getElementById("seek-bar");
@@ -58,61 +57,54 @@ window.onload = function() {
 	});
 
 	// Event listener for the full-screen button
-	fullScreenButton.addEventListener("click", function() {
-  		if (video.requestFullscreen) {
-    		video.requestFullscreen();
+	fullScreenButton.addEventListener("click", function() {		
+    toggleFullScreen();     
+  });
 
-        // Update the button image to 'minimizescreen'
-        //fullScreenButton.src= "bilder/minimizescreen.png";
-  		} 
+document.addEventListener("keydown", function(e) {
+  if (e.keyCode == 13) {
+    toggleFullScreen();
+  }
+}, false);
 
-  		else if (video.mozRequestFullScreen) {
-    		video.mozRequestFullScreen(); // Firefox
-
-        // Update the button image to 'minimizescreen'
-        //fullScreenButton.src= "bilder/minimizescreen.png";
-  		} 
-
-  		else if (video.webkitRequestFullscreen) {
-    		video.webkitRequestFullscreen(); // Chrome and Safari
-
-        // Update the button image to 'minimizescreen'
-        //fullScreenButton.src= "bilder/minimizescreen.png";
-  		}
-
-      controlbar.classList.add("fullscreen-controls")
-	});
-
-
-    // Event listener for the minimizescreen button
-  minimizeScreenButton.addEventListener("click", function() {
-      // exit full-screen
-      if (document.exitFullscreen) {
-          document.exitFullscreen();
-
-          //fullScreenButton.src= "bilder/fullscreen.png";
+function toggleFullScreen() {
+  if (!document.fullscreenElement &&    // alternative standard method
+      !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+   
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
       } 
 
-      else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-
-          //fullScreenButton.src= "bilder/fullscreen.png";
+      else if (video.mozRequestFullScreen) {
+        video.mozRequestFullScreen(); // Firefox
       } 
 
-      else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-
-        //fullScreenButton.src= "bilder/fullscreen.png";
-      } 
-
-      else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
-
-        //fullScreenButton.src= "bilder/fullscreen.png";
+      else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen(); // Chrome and Safari
       }
 
-      controlbar.classList.remove("fullscreen-controls")
-  });
+    fullScreenButton.src= "bilder/minimizescreen.png"
+    controlbar.classList.add("fullscreen-controls")
+  } 
+
+  else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } 
+    else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    } 
+    else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } 
+    else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    }
+
+    fullScreenButton.src= "bilder/fullscreen.png"
+    controlbar.classList.remove("fullscreen-controls")
+  }
+}
 
 
 	// Event listener for the seek bar
@@ -143,32 +135,13 @@ window.onload = function() {
   		video.play();
 	});
 
-	// Event listener for the volume bar
-	volumeBar.addEventListener("change", function() {
-  		// Update the video volume
-  		video.volume = volumeBar.value;
-	});
+  // Event listener for the volume bar
+  volumeBar.addEventListener("change", function() {
+      // Update the video volume
+      video.volume = volumeBar.value;
+
+      if (volumeBar.value == 0) {
+        muteButton.src= "bilder/mute.png";
+      }
+  });
 }
-
-
-
-var Videotime = new (function() {
-  var $stopwatch, // Stopwatch element on the page
-    decrementTime = 70, // Timer speed in milliseconds
-    currentTime = 0, 
-// Current time in hundredths of a second
-    updateTimer = function() {
-      $stopwatch.html(formatTime(currentTime));
-      currentTime -= decrementTime / 10;
-    },
-    init = function() {
-      $stopwatch = $('#stopwatch');
-
-Videotime.Timer = $.timer(updateTimer, decrementTime, true);
-    };
-  this.resetStopwatch = function() {
-    currentTime = 0;
-    this.Timer.stop().once();
-  };
-  $(init);
-});

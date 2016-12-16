@@ -49,12 +49,12 @@ if (isset($_POST['changevideo'])) {
 	<div class="row">
 		<div class="hidden-xs hidden-sm col-md-3" id="aboutus">
 			<div id="list">ABOUT US</div> 
-			<img src="bilder/about.jpg" alt="Bild på ossss" width="100%">
-			<p class="white"><br>Vi är två elever från NTI-skolan i Umeå, där vi går ett fjärde tekniskt år (T4) inom mjukvarudesign. Den här hemsidan har vi gjort under våran första praktikperiod på Codemill. Våran uppgift var att göra en HTML5 videospelare med egna kontroller, även kunna byta mellan några olika videor. Hemsidan skulle passa bra både olika enheter (mobil, suftplatta, dator). Det här är resultatet vi kom fram till och ni får gärna ge feedback till oss på:<br>liza_pettersson_@hotmail.com<br>eller<br>slaktarn95@hotmail.com<br><b>Tack för ditt besök!<br>MVH Liza Pettersson & Felix Sjövik</b><br>©</p>
+			<img src="bilder/about2.jpg" alt="Bild på oss" width="100%">
+			<p class="white"><br>Vi är två elever från NTI-skolan i Umeå, där vi går ett fjärde tekniskt år (T4) inom mjukvarudesign. Den här hemsidan har vi gjort under våran första praktikperiod på Codemill. Våran uppgift var att göra en HTML5 videospelare med egna kontroller, även kunna byta mellan några olika videor. Hemsidan skulle passa bra både olika enheter (mobil, suftplatta, dator). Det här är resultatet vi kom fram till och ni får gärna ge feedback till oss på:<br>liza_pettersson_@hotmail.com<br>eller<br>felix.sjovik@gmail.com<br><b>Tack för ditt besök!<br>MVH Liza Pettersson & Felix Sjövik</b><br>©</p>
 		</div>
 
 		<div class="col-xs-12 col-sm-12 col-md-6">
-			<div id= "video-player" width="100%">			
+			<div id="videoplayer" width="100%">			
 				<?php 
 
 		  		$query = "SELECT * FROM videos WHERE VideoID = '" . $_SESSION['VideoID'] . "'";
@@ -71,7 +71,6 @@ if (isset($_POST['changevideo'])) {
 						<input type="image" src="bilder/play.png" id="play-pause">
 						<input type="range" id="seek-bar" value="0">
 						<input type="image" src="bilder/fullscreen.png" id="full-screen">
-						<input type="image" src="bilder/minimizescreen.png" id="minimize-screen">
 						<input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
 						<input type="image" src="bilder/volume.png" id="mute">
 					</nav>																
@@ -126,26 +125,25 @@ if (isset($_POST['changevideo'])) {
 
 
 
-		<div class="row">
-		  <div class="hidden-xs hidden-sm col-md-offset-3 col-md-6 col-md-3">
-		  	<footer id="footmdlg">
-				<p>© Made by Felix and Liza ©</p>
-			</footer>
-		  </div>
-
-		  	  <div class="col-xs-12 col-sm-12 hidden-md hidden-lg">
+		<div class="row" id="footer">
+		  	  <div class="col-xs-12 col-sm-12 hidden-md hidden-lg" id="footsmall">
 		  	<footer id="footxssm">
-		  		<a href="add.php"><img src="bilder/add.png" alt="Add video" width="10%">
-		  		<a href="#top"><img src="bilder/top.png" alt="TOP" width="10%"></a>
-		  		ABOUT US
-				<img src="bilder/about.jpg" alt="Bild på ossss" width="20%">
-				<p class="white"><br>Vi är två elever från NTI-skolan i Umeå, där vi går ett fjärde tekniskt år (T4) inom mjukvarudesign. Den här hemsidan har vi gjort under våran första praktikperiod på Codemill. Våran uppgift var att göra en HTML5 videospelare med egna kontroller, även kunna byta mellan några olika videor. Hemsidan skulle passa bra både olika enheter (mobil, suftplatta, dator). Det här är resultatet vi kom fram till och ni får gärna ge feedback till oss på:<br>liza_pettersson_@hotmail.com<br>eller<br>slaktarn95@hotmail.com<br><b>Tack för ditt besök!<br>MVH Liza Pettersson & Felix Sjövik<br>©</b></p>
+		  		<div id="aboutmeny">
+		  			<a href="add.php" id="addmeny"><img src="bilder/add.png" alt="Add video" width="30%">
+		  			<a href="#top" id="topmeny"><img src="bilder/top.png" alt="TOP" width="30%"></a>
+		  		</div>
+		  		<table>
+					<tr id="abouttable"><td id="aboutimg"><img src="bilder/about.jpg" alt="Bild på oss" width="100%"></td>
+						<td id="aboutinfo"><img src="bilder/aboutus2.png" alt="ABOUT US" width="30%">
+						<p class="white"><br>Vi är två elever från NTI-skolan i Umeå, där vi går ett fjärde tekniskt år (T4) inom mjukvarudesign. Den här hemsidan har vi gjort under våran första praktikperiod på Codemill. Våran uppgift var att göra en HTML5 videospelare med egna kontroller, även kunna byta mellan några olika videor. Hemsidan skulle passa bra både olika enheter (mobil, suftplatta, dator). Det här är resultatet vi kom fram till och ni får gärna ge feedback till oss på:<br>liza_pettersson_@hotmail.com<br>eller<br>felix.sjovik@gmail.com<br><b>Tack för ditt besök!<br>MVH Liza Pettersson & Felix Sjövik<br>©</b></p></td>
+					</tr>
+				</table>
 			</footer>
 		  </div>
-		  <div class="hidden-xs hidden-sm col-md-offset-3 col-md-6 col-md-3">
+		  <div class="hidden-xs hidden-sm col-md-offset-10 col-md-2">
 		  	<div id="fixedmeny">
-		  		<a href="add.php"><img src="bilder/add.png" alt="Add video" width="20%"></a>
-		  		<a href="#top"><img src="bilder/top.png" alt="TOP" width="20%"></a>
+		  		<a href="add.php"><img src="bilder/add.png" alt="Add video" width="30%"></a>
+		  		<a href="#top"><img src="bilder/top.png" alt="TOP" width="30%"></a>
 		  	</div>
 		  </div>
 		</div>

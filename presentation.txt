@@ -1,0 +1,22 @@
+				
+				Presentation
+
+
+1.	FELIX	Berättar om våran uppgift:
+			(våran uppgift var att göra en html5 video-spelare som är Codemill-branded. loggan, färgerna och kontrollerna till videon är alla inspirerade av codemill. hemsidan skulle vara modern och responsiv, och man skulle kunna välja mellan några olika videoklipp. Designen skulle kunna anpassas efter olika enheter, egna controllers osv..)
+
+2.	LIZA	Berätta processen :
+			(för att göra sidan har vi använt oss utav bootstrap, HTML5, CSS, Javascript, PHP och MySQL och skapat ikonerna och
+			loggan i InkScape, började göra wireframes, sedan strukturerade vi upp sidan med bootstrap, så det skulle passa för olika storlekar, efter de började vi fixa videospelaren, sen kontrollerna, videolistan, footern och en liten del om projektet.)
+
+3.	FELIX	Visar sidan:
+			(visar runt på sidan för både datorer, surfplattor och mobilen, både liggande och stående position. Trycker på top-knappen, add-knappen och about-knappen på de mindre enheterna för att visa att man hamnar längst ner. Visar i videolistan att man ser information om videona och klicka på texten så det syns att man kan byta video. Visa att beskrivningen om den spelande vidon ändras när man byter video, visar att videon funkar med kontrollerna, även fullskärm och olika enheter.)
+
+4.	LIZA	Förklarar funkrioner:
+			(Videolistan finns i en databas, för att ändra video tänkte jag ananvända mig utav GET och läsa in vilket videovärde som fanns där, men tyvärr så verkade inte servern vi använder oss utav vara så kompis med de, hade säkert funkat om man lagt ner lite mer tid på det, men jag valde att göra en snabb lösning istället och spara videoid i en session, vilket jag kom på efter förhindrar att man kan tycka på bakåtknappen till videon innan. Sedan hann jag endast börja lite smått med funktionen att lägga till egna videor.)
+
+5.	FELIX	Berättar lite vad du gjort, vad som gick bra, vad som gått mindre bra, vad du hade velat ändra/lägga till om vi hade hade mer tid
+
+6.	LIZA	Berättar lite vad du gjort, vad som gick bra, vad som gått mindre bra, vad du hade velat ändra/lägga till om vi hade hade mer tid
+
+7.	FELIX	Tackar för att vi har fått varit här, och frågar om någon som har någon fråga
